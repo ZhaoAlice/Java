@@ -1,4 +1,4 @@
-package com.ztesoft.bss.autoconfigure;
+package net;
 
 import java.io.IOException;
 import java.net.Inet6Address;
