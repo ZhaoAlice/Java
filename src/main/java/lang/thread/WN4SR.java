@@ -1,7 +1,5 @@
 package lang.thread;
 
-import java.util.TreeMap;
-
 public class WN4SR {
     private final static Object object = new Object();
     public static class ChangeObjectThread extends Thread {
