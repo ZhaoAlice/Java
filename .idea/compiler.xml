@@ -9,8 +9,5 @@
         <module name="zerojava" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="zerojava" target="1.6" />
-    </bytecodeTargetLevel>
   </component>
 </project>
