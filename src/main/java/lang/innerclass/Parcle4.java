@@ -13,6 +13,8 @@ class Parcle {
     }
     protected class Pdestination implements Destination {
         private String label;
+        // 非静态内部类不允许有静态字段
+//        private static int j = 0;
         public Pdestination(String label1) {
             label = label1;
         }
@@ -20,12 +22,22 @@ class Parcle {
         public String readLabel() {
             return label;
         }
+        // 非静态内部类不允许有任何static的成员声明
+//        public static void testStaticFun() {
+//            return;
+//        }
     }
     public Destination destination() {
         return new Pdestination("test intf");
     }
     public Contents contents() {
+
         return new Pcontents(7);
+    }
+    // 访问内部类的私有字段
+    public int contents1() {
+
+        return new Pcontents(7).i;
     }
 }
 class Warpping {
