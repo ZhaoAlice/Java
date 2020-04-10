@@ -65,7 +65,7 @@ public class MultiUnbound {
         call3.call3(mt, 1,2.0, "3");
         call4.call4(mt, 1,2.0, "4", 'c');
 
-        // 编译器会根据构造函数与接口方法中的参数将正确的方法进行绑定
+        // 编译器会根据构造函数与接口方法中的参数将正确的方法进行绑定 调用正确的构造函数创建对象
         Ctor0 ctor0 = MultiParam::new;
         Ctor1 ctor1 = MultiParam::new;
         Ctor2 ctor2 = MultiParam::new;
