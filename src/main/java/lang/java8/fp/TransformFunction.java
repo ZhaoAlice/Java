@@ -9,10 +9,15 @@ import java.util.function.Function;
  * @create 2020/4/12
  * @since 1.0.0
  */
-class I {
+class I implements IntCall{
     @Override
     public String toString() {
         return "I{}";
+    }
+
+    @Override
+    public int call(int arg) {
+        return 0;
     }
 }
 class O {
@@ -23,6 +28,9 @@ class O {
     }
 }
 public class TransformFunction {
+    public I getI() {
+        return new I();
+    }
     static Function<I, O> transform(Function<I, O> in) {
         return in.andThen(o -> {
             System.out.println(o);
