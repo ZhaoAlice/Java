@@ -80,7 +80,17 @@ class DogPerson extends CanieHero<SuperHearSmell> {
 }
 public class EpicBattle {
 
+    static <POWER extends SuperHearing> void useSuperHearing(SuperHero<POWER> hero) {
+        hero.getPower().hearSubtleNoises();
+    }
+    static <POWER extends SuperHearing & SuperSmell> void superFind(SuperHero<POWER> hero) {
+        hero.getPower().hearSubtleNoises();
+        hero.getPower().trackBySmell();
+    }
     public static void main(String[] args) {
         DogPerson dogPerson = new DogPerson(new SuperHearSmell());
+        useSuperHearing(dogPerson);
+        superFind(dogPerson);
+
     }
 }
