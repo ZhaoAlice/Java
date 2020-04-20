@@ -1,6 +1,7 @@
 package lang.java8.streams;
 
 import java.util.Random;
+import java.util.stream.IntStream;
 
 /**
  * 〈the first stream programing〉<br>
@@ -17,6 +18,7 @@ public class Randoms {
                 .limit(7)
                 .sorted()
                 .forEach(System.out::println);
+        System.out.println(IntStream.range(10, 20).sum());
     }
 
 }
