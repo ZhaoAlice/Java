@@ -17,6 +17,8 @@ import java.io.Serializable;
  */
 public class TransientDemo implements Serializable {
 
+    //添加序列化ID
+    private static final long serialVersionUID = -6457449179727251407L;
     private String firstName;
     // 序列化时字段有改关键字修饰/静态变量将不被序列化
     private transient String middleName;
