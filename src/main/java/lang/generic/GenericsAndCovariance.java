@@ -13,7 +13,10 @@ import java.util.List;
  */
 
 public class GenericsAndCovariance {
-
+    /**
+     * 有时你想要在两个类型之间建立某种类型的向上转型关系 这正是通配符所允许的
+     * @param args
+     */
     public static void main(String[] args) {
         List<? extends Fruit> flist = new ArrayList<>();
         List<? extends Fruit> flist1 = new ArrayList<Apple>();
