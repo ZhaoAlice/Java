@@ -16,6 +16,7 @@ public class ComposeFunction {
     },
             f2 = s -> s.substring(3),
             f3 = s -> s.toUpperCase(),
+    // 先执行f2 f1 f3
             f4 = f1.compose(f2).andThen(f3);
 
     public static void main(String[] args) {

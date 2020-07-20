@@ -56,7 +56,7 @@ public class FunctionVariants {
     // 接受一个Lbaz 返回一个long int double类似
     static ToLongFunction<Lbaz> fl = lb -> lb.l;
 
-    // 基本累心之间的转换
+    // 基本类型之间的转换
     static IntToDoubleFunction i2d = i -> i;
     // 类型转换
     static DoubleToIntFunction d2i = d -> (int) d;

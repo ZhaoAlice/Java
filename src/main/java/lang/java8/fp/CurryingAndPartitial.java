@@ -4,7 +4,7 @@ import java.util.function.Function;
 
 /**
  * 〈柯里化与部分求值〉<br>
- *  柯里化即将一个含有多参数的函数转换为但参数的函数
+ *  柯里化即将一个含有多参数的函数转换为单参数的函数
  *
  * @author Carrie
  * @create 2020/4/12

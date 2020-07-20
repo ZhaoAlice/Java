@@ -86,6 +86,6 @@ public class ClassFunctional {
         BinaryOperator<AA> bio = ClassFunctional::f10;
         bio.apply(new AA(), new AA());
         TriFunctional<Integer, Integer, Long, Double> tri = ClassFunctional::f;
-        tri.apply(1, 2l, 3.0);
+        tri.apply(1, 2L, 3.0);
     }
 }
