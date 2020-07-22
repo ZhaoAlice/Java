@@ -21,6 +21,6 @@ public class StreamOf {
 
         // 生成流的时候第一个元素类型必须是有权限访问的后面的元素则根据第一个元素进行推断
         // 如果写成Stream.of(tf.getI(), tf.getI(), tf.getI())则会报错 因为I是包访问权限
-        Stream.of(intCall1, tf.getI(), tf.getI()).forEach(System.out::println);
+        Stream.of(intCall1, intCall2, intCall3).forEach(System.out::println);
     }
 }

@@ -23,6 +23,7 @@ public class Generators implements Supplier<String> {
     }
 
     public static void main(String[] args) {
+        // 使用supplier生成流元素
         String words = Stream.generate(new Generators())
                 .limit(30)
                 .collect(Collectors.joining());

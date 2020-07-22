@@ -34,6 +34,7 @@ class S {
 // 集合生成流
 public class CollectionStream {
     public static void main(String[] args) {
+        //每个集合都可以通过stream()方法来产生一个流
         List<S> sList = Arrays.asList(new S(1), new S(2), new S(3));
         System.out.println(sList.stream()
                 .mapToInt(s -> s.getI())
