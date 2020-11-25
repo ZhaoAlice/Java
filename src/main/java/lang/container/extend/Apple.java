@@ -9,6 +9,8 @@
  */
 package lang.container.extend;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 /**
@@ -20,6 +22,16 @@ import java.util.Random;
  * @since 1.0.0
  */
 public class Apple extends Fruit  {
+
+    private Map<String, String> sunshine;
+
+    @Override
+    public String getTitle() {
+        // 取到的是父类的title
+        return super.getTitle();
+    }
+
+    private String title = "subclass";
 
     private static Random random = new Random();
     // OK 运行时常量
@@ -37,13 +49,23 @@ public class Apple extends Fruit  {
         super(10);
         System.out.println(str);
         this.str = str;
+        this.sunshine = new HashMap<String, String>();
     }
     public final void printClassName() {
         System.out.println(this.getClass().getName());
     }
+    @Override
+    public String getSunshine() {
+        System.out.println(getTitle());
+        // 取到是父类的sunshine
+        return super.getSunshine();
+
+    }
     public static void main(String[] args) {
         Apple apple = new Apple("apple");
         apple.printClassName();
+        apple.sunshine.put("subclass", "sunshine");
+        System.out.println(apple.getSunshine());
     }
     // 不允许覆盖基类中作为接口的final方法
 //    public final void printClassName1() {

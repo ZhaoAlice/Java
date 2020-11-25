@@ -64,6 +64,7 @@ public class Parcle4 {
     private Warpping getWarpping(int x) {
         //通过父类的构造函数实现参数初始化
         return new Warpping(x) {
+            @Override
             public int readValue() {
                 return super.readValue();
             }
