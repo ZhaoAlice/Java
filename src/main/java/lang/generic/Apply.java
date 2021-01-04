@@ -5,8 +5,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Spliterator;
-import java.util.function.Consumer;
 
 class Shape {
     public void rotate() {
@@ -40,7 +38,8 @@ class FilledList<T> extends ArrayList<T> {
  * @since 1.0.0
  */
 public class Apply {
-    public static <T, S extends Iterable<? extends T>> void apply(S seq, Method f, Object ...args) {
+    // 迭代器中如果根据现在的使用方法则不需要添加通配符
+    public static <T, S extends Iterable<T>> void apply(S seq, Method f, Object ...args) {
         try {
             for (T t : seq) {
                 f.invoke(t, args);
@@ -85,10 +84,12 @@ class ApplyTest {
         for (int i = 0; i < 10; i++) {
             squares.add(new Square());
         }
-        Apply.apply(squares, Square.class.getMethod("rotate"));
-        Apply.apply(squares, Square.class.getMethod("rotate", int.class), 5);
+        Apply.apply(squares, Shape.class.getMethod("rotate"));
+        Apply.apply(squares, Shape.class.getMethod("resize", int.class), 5);
 
         Apply.apply(new FilledList<>(Shape.class, 5), Shape.class.getMethod("resize", int.class), 10);
+        // 这个无界通配符必须要加上 因为要适配父类与子类 shape与square
+        Apply.apply(new FilledList<>(Square.class, 5), Shape.class.getMethod("resize", int.class), 10);
 
         SimpleQueue<Shape> shapes1 = new SimpleQueue<>();
         for (int i = 0; i < 5; i++) {
