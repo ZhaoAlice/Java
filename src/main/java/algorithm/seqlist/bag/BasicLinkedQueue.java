@@ -1,6 +1,7 @@
 package algorithm.seqlist.bag;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 import org.w3c.dom.Node;
 
@@ -13,8 +14,8 @@ import org.w3c.dom.Node;
  */
 public class BasicLinkedQueue<T> implements Iterable<T> {
     private int n;
-    private Node first;
-    private Node last;
+    private Node<T> first;
+    private Node<T> last;
 
     public BasicLinkedQueue() {
         this.n = 0;
@@ -30,6 +31,10 @@ public class BasicLinkedQueue<T> implements Iterable<T> {
         return n;
     }
 
+    /**
+     * 入队
+     * @param item
+     */
     public void enqueue(T item) {
         Node<T> oldLast = last;
         last = new Node<T>();
@@ -41,12 +46,50 @@ public class BasicLinkedQueue<T> implements Iterable<T> {
         else {
             oldLast.next = last;
         }
+        // 入队加1
         n++;
+    }
+
+    /**
+     * 出队
+     * @return
+     */
+    public T dequeue() {
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+        T value = first.item;
+        first = first.next;
+        n--;
+        if (isEmpty()) {
+            last = null;
+        }
+        return value;
     }
 
     @Override
     public Iterator<T> iterator() {
-        return null;
+        return new LinkedQueueIterator();
+    }
+
+    public class LinkedQueueIterator implements Iterator<T> {
+
+        private Node<T> current = first;
+
+        @Override
+        public boolean hasNext() {
+            return null != current;
+        }
+
+        @Override
+        public T next() {
+            if (!hasNext()) {
+                throw new NoSuchElementException();
+            }
+            T value = current.item;
+            current = current.next;
+            return value;
+        }
     }
 
     public static class Node<T> {
