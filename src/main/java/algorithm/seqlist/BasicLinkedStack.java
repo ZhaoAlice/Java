@@ -1,4 +1,4 @@
-package algorithm.seqlist.bag;
+package algorithm.seqlist;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;

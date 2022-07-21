@@ -1,4 +1,4 @@
-package algorithm.seqlist.bag;
+package algorithm.seqlist;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -13,6 +13,7 @@ import org.w3c.dom.Node;
  * @since 1.0.0
  */
 public class BasicLinkedQueue<T> implements Iterable<T> {
+    /** 队列大小 */
     private int n;
     private Node<T> first;
     private Node<T> last;
@@ -29,6 +30,17 @@ public class BasicLinkedQueue<T> implements Iterable<T> {
 
     public int size() {
         return n;
+    }
+
+    /**
+     * 只返回对头元素的值 元素并不出队
+     * @return
+     */
+    public T peek() {
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+        return first.item;
     }
 
     /**
@@ -60,6 +72,7 @@ public class BasicLinkedQueue<T> implements Iterable<T> {
         }
         T value = first.item;
         first = first.next;
+        // 出队减去1
         n--;
         if (isEmpty()) {
             last = null;
