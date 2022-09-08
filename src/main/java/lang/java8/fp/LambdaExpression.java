@@ -1,7 +1,5 @@
 package lang.java8.fp;
 
-import com.sun.org.apache.xpath.internal.operations.Mult;
-
 /**
  * 〈lambda 函数式编程要求所有的接口只能有一个方法〉<br>
  *

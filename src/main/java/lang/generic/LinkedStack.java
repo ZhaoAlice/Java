@@ -1,7 +1,5 @@
 package lang.generic;
 
-import com.sun.org.apache.bcel.internal.generic.POP;
-
 /**
  * 〈练习泛型: 一般用在容器中, 一个类想要承载什么类型的对象 就是模板〉<br>
  *

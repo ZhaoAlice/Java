@@ -1,7 +1,5 @@
 package lang.generic;
 
-import com.sun.xml.internal.ws.policy.privateutil.RuntimePolicyUtilsException;
-
 import java.util.Iterator;
 import java.util.Random;
 

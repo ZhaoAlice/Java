@@ -1,6 +1,5 @@
 package lang.generic;
 
-import com.sun.org.apache.bcel.internal.generic.NEW;
 import lang.container.collection.List;
 
 import java.util.AbstractList;
