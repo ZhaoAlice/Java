@@ -21,7 +21,7 @@ public class Controller {
     public void run() {
         Event event;
         while (eventList.size() > 0) {
-            Iterator<Event> iterator = new ArrayList<Event>(eventList).iterator();
+            Iterator<Event> iterator = new ArrayList<>(eventList).iterator();
             // You should always check Ali's development manual
             while (iterator.hasNext()) {
                 event = iterator.next();

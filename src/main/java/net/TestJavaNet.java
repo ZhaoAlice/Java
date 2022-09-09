@@ -8,6 +8,9 @@ import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Enumeration;
 
+/**
+ * 忘记是从哪里copy过来的了
+ */
 public class TestJavaNet {
     public static void main(String[] args) throws IOException{
         InetAddress inetAddress;//声明InetAddress对象

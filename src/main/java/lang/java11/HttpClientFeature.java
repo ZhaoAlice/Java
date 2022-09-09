@@ -5,6 +5,7 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.stream.Collectors;
 
 /**
  * 〈API使用更方便 支持异步发送请求 返回一个CompletableFuture来构建异步操作通道〉<br>
